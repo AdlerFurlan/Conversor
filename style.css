@@ -1,0 +1,43 @@
+.moeda{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    max-width: 800px;
+    margin-top: 200px;
+    background-color: rgb(175, 154, 154);
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px ;
+}
+.origem, .destino{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+.caixa{
+    margin-right: 20px;
+}
+
+.direita{
+    margin-left: auto;
+}
+.para{
+    color: rgb(56, 21, 21);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    display: flex;
+    margin-left: 40px;
+}
+body{
+    background-color: rgb(236, 221, 221);
+}
+.navbar{
+    font-size: 30px;
+}
+#conteudoUnidade{
+    display: none;
+    background-color: rgb(207, 135, 135);
+}
+#titulo{
+    font-size: 30px;
+    margin-left: 90px;
+}

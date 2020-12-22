@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#" id="titulo">CONVERSOR</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav direita">
+            <li class="nav-item opconteudoli active"  onclick="Mudarestado2(event)">
+              <a class="nav-link opconteudo" href="#">Moeda</a>
+            </li>
+            <li class="nav-item opconteudoli" onclick="Mudarestado2(event)">
+              <a class="nav-link opconteudo" href="#">Unidade</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <div class="conteudos">
+        <section class="moeda border border-secondary conteudo" id="conteudoMoeda" >
+            <div class="origem">
+                <div class="input-group caixa border border-secondary">
+                    <input type="number" class="form-control"  aria-label="Amount (to the nearest dollar)" id="input1" onkeyup="alterarMoeda()">
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                        Selecionar Moeda
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <a class="dropdown-item" href="#" id="real1" onclick="mudarMoeda1(event)">Real</a>
+                        <a class="dropdown-item" href="#" id="Dolar1" onclick="mudarMoeda1(event)">Dólar</a>
+                        <a class="dropdown-item" href="#" id="Euro1" onclick="mudarMoeda1(event)">Euro</a>
+                    </div>
+                </div>
+            </div>
+            <p class="para">Para:</p>
+            
+            <div class="destino">
+                <div class="input-group caixa border border-secondary">
+                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" id="input2">
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Selecionar Moeda
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                        <a class="dropdown-item" href="#"  onclick="mudarMoeda2(event)">Real</a>
+                        <a class="dropdown-item" href="#"  onclick="mudarMoeda2(event)">Dólar</a>
+                        <a class="dropdown-item" href="#"  onclick="mudarMoeda2(event)">Euro</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="moeda border border-secondary conteudo" id="conteudoUnidade" >
+            <div class="origem">
+                <div class="input-group caixa border border-secondary">
+                    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" id="input3" onchange="alterarUnidade()">
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Selecionar Unidade
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                        <a class="dropdown-item" href="#"  onclick="mudarUnidade3(event)">Metro</a>
+                        <a class="dropdown-item" href="#"  onclick="mudarUnidade3(event)">Milha</a>
+                        <a class="dropdown-item" href="#"  onclick="mudarUnidade3(event)">Pé</a>
+                    </div>
+                </div>
+            </div>
+            <p class="para">Para:</p>
+            <div class="destino">
+                <div class="input-group caixa border border-secondary">
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="input4">
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton4"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Selecionar Unidade
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+                        <a class="dropdown-item" href="#"  onclick="mudarUnidade4(event)">Metro</a>
+                        <a class="dropdown-item" href="#"  onclick="mudarUnidade4(event)">Milha</a>
+                        <a class="dropdown-item" href="#"  onclick="mudarUnidade4(event)">Pé</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
